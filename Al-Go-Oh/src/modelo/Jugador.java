@@ -42,11 +42,12 @@ public class Jugador {
     }
 
     public void colocarEnAtaque(Monstruo monstruo){
+        // pensar una manera de implementar colcar en ataque con sacrificio o de modo directo con las excepciones correspondientes
         Tablero  campo = this.obtenerCampo();
         monstruo.asociarTablero(campo);
         if(monstruo.requiereSacrificio())
         {
-            this.sacrificarMonstruos(monstruo.cantidadASacrificar());
+            this.sacrificarMonstruos(monstruo.cantidadASacrificar()); // ¿qué pasa si no puede sacrificar nada?
         }
         monstruo.setPosicion(Posicion.ATAQUE);
         monstruo.setEstado(Colocacion.BOCAARRIBA);
@@ -57,13 +58,14 @@ public class Jugador {
         this.tablero.sacrificarMonstruos(cantidad);
     }
 
-    public void colocarEnDefensa(Monstruo monstruo){
+    public void colocarEnDefensa(Monstruo monstruo){ //se debe sacrificar en algun momento.
         Tablero  campo = this.obtenerCampo();
         monstruo.setPosicion(Posicion.DEFENSA);
         monstruo.setEstado(Colocacion.BOCAABAJO);
         campo.tirarCarta(monstruo);
     }
-
+    //sobre carga de métodos explicar en informe, o hacer diagramas al respecto.
+    //ESTOS TRES MÉTODOS HACEN COSAS DISTINTAS
     public void colocarCarta(CartaMagica carta){
         this.obtenerCampo().tirarCarta(carta);
     }
@@ -77,7 +79,8 @@ public class Jugador {
         this.obtenerCampo().tirarCarta(carta);
     }
         
-    
+    //SACAR LOS ENUM POR AMOR A LA PROGRAMACIÓN ORIENTADA A OBJETOS
+    //ESTA MUY DISPERSO EL COMPORTAMIENTO DE DEFENSA Y ATAQUE
     public void declararAtaqueDePosicionAPosicion(Jugador defensor, Casillero casilleroAtacante, Casillero casilleroDefensor) {
         
         Monstruo monstruoAtacante = tablero.obtenerMonstruoEnCasillero(casilleroAtacante);

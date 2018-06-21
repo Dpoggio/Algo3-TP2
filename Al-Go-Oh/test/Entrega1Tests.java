@@ -14,9 +14,12 @@ public class Entrega1Tests {
     @Test
     public void test01PrimerEntrega(){
         /*Colocar una carta de monstruo en posición de ataque.*/
+        // suponiendo que existe la clase posición
+       // Posicion nuevaPosicion = new Posicion();
+       // Monstruo monstruo = new Monstruo("test",100,100,Posicion.ATAQUE,4);
 
-        Monstruo monstruo = new Monstruo("test",100,100,Posicion.ATAQUE,4);
-
+        Monstruo monstruo = new Monstruo("test",100,100,new Posicion(),4);
+    //toda la info de los puntos de ataque y de defensa y de estrellas puede ir en un factory de monstruos.
         assertEquals(Posicion.ATAQUE,monstruo.getPosicion());
     }
 
