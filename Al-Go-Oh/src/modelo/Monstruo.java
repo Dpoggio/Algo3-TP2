@@ -50,37 +50,7 @@ public class Monstruo extends Carta {
     {
         Ataque ataque = new Ataque(atacante,defensor,this,objetivo);
         ataque.realizarAtaque();
-/*
-        // Si no se activa el efecto de carta trampa o el efecto del objetivo
-        if ( !defensor.obtenerCampo().activarEfectoCartaTrampa(atacante, defensor, this) && !objetivo.activarEfectoEnAtaque(atacante, defensor, this) ) {
 
-            if (objetivo.getPosicion() == Posicion.ATAQUE) {
-                if (objetivo.noDefiendeEnAtaque(this)) {
-                    //defensor.obtenerCampo().matarMonstruo(objetivo);
-                    objetivo.destruir();
-                    defensor.restarPuntosDeVida(this.getPuntosAtaque() - objetivo.getPuntosAtaque());
-                }
-                if (this.noDefiendeEnAtaque(objetivo)) {
-                    //atacante.obtenerCampo().matarMonstruo(this);
-                    this.destruir();
-                    atacante.restarPuntosDeVida(objetivo.getPuntosAtaque() - this.getPuntosAtaque());
-                }
-            } else {
-                if (objetivo.noDefiendeEnDefensa(this)) {
-                    //defensor.obtenerCampo().matarMonstruo(objetivo);
-                    objetivo.destruir();
-                }
-                if (objetivo.daniaEnDefensa(this)) {
-                    atacante.restarPuntosDeVida(objetivo.getPuntosDefensa() - this.getPuntosAtaque());
-                }
-
-
-            }
-
-        }
-
-        objetivo.setEstado(Colocacion.BOCAARRIBA);
-*/
     }
 
 

@@ -9,6 +9,22 @@ public class Jugador {
     private Mano mano;
     private Mazo mazo;
 
+    /*** TMP ****/
+    protected int cantidad_destruida = 0;
+
+    public void sumar_cantidad_destruida() {
+        cantidad_destruida += 1;
+    }
+
+
+    public int getCantidadDestruida(){
+        return cantidad_destruida;
+    }
+    /************/
+
+
+
+
     public Jugador(){
         tablero = new Tablero();
         puntosDeVida = 8000;
