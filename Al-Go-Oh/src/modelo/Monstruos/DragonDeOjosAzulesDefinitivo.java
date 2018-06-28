@@ -21,16 +21,16 @@ public class DragonDeOjosAzulesDefinitivo extends Monstruo {
         throw new MonstruoDeFusionException();
     }
 
-    @Override
-    public void requiereSacrificios(Monstruo sacrificio1, Monstruo sacrificio2, Monstruo sacrificio3){
-        if ((sacrificio1 instanceof DragonBlancoDeOjosAzules) && (sacrificio2 instanceof DragonBlancoDeOjosAzules) && (sacrificio3 instanceof DragonBlancoDeOjosAzules) ) {
+    //@Override // SEGREGACION INTERFAZ, NO RECIBIR MONSTRUO
+    public void requiereSacrificios(DragonBlancoDeOjosAzules sacrificio1, DragonBlancoDeOjosAzules sacrificio2, DragonBlancoDeOjosAzules sacrificio3){
+        //if ((sacrificio1 instanceof DragonBlancoDeOjosAzules) && (sacrificio2 instanceof DragonBlancoDeOjosAzules) && (sacrificio3 instanceof DragonBlancoDeOjosAzules) ) {
             sacrificio1.destruir();
             sacrificio2.destruir();
             sacrificio3.destruir();
-        }
-        else{
-            throw new MonstruoDeFusionException();
-        }
+        //}
+        //else{
+        //    throw new MonstruoDeFusionException();
+        //}
     }
 
 

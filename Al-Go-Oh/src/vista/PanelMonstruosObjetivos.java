@@ -1,5 +1,6 @@
 package vista;
 
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class PanelMonstruosObjetivos extends HBox {
 
     private ArrayList<BotonMonstruo> monstruos;
+    private Button lp;
 
     public PanelMonstruosObjetivos(Jugador jugador, Stage stage, Monstruo atacante) {
         monstruos = new ArrayList<BotonMonstruo>();
@@ -30,6 +32,10 @@ public class PanelMonstruosObjetivos extends HBox {
     }
 
     public void actualizarPanel(Jugador jugador,Stage stage, Monstruo atacante){
+        if(jugador.getZonaMonstruo().cantidadCartas() == 0){
+            this.dibujarLifePoints();
+            return;
+        }
         for (int i = 0; i < jugador.getZonaMonstruo().cantidadCartas(); i++) {
 
             monstruos.get(i).setCarta((Monstruo) jugador.getZonaMonstruo().obtenerCartaPosicion(i));
@@ -50,6 +56,16 @@ public class PanelMonstruosObjetivos extends HBox {
             monstruos.get(i).setGraphic(newImage);
             monstruos.get(i).setPrefSize(62,91);
         }
+    }
+
+    private void dibujarLifePoints() {
+        this.monstruos.forEach(x -> x.setVisible(false));
+        this.lp = new Button();
+        this.lp.setText("aaaaaaaaaaaaaaaaaaaaa"); //TO DO LIFE POINTS
+        this.lp.setVisible(true);
+        this.getChildren().add(this.lp);
+
+
     }
 
 

@@ -1,12 +1,9 @@
 package modelo.Estados;
 
 import modelo.Monstruo;
-
 public class Estado {
-    protected int puntos;
 
-    public void recibirDanio(Monstruo atacante, Monstruo defensor) {
+    // acá había puntos de daño
+    public void recibirDanio(Monstruo atacante, Monstruo defensor){}
 
-
-    }
 }

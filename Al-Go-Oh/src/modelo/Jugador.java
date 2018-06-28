@@ -8,6 +8,7 @@ import modelo.Excepciones.InvocacionNoPosibleException;
 import modelo.Mazo.Mazo;
 import modelo.CartasMagicas.CartaCampoSinEfecto;
 import modelo.Excepciones.ZonaVaciaException;
+import modelo.Monstruos.DragonBlancoDeOjosAzules;
 
 public class Jugador {
     //private Tablero tablero;
@@ -90,7 +91,7 @@ public class Jugador {
         this.zonaMonstruo.colocarCarta(monstruo);
     }
 
-    public void invocar(Monstruo monstruo, Monstruo sacrificio1, Monstruo sacrificio2, Monstruo sacrificio3) {
+    public void invocar(modelo.DragonDeOjosAzulesDefinitivo monstruo, DragonBlancoDeOjosAzules sacrificio1, modelo.DragonDeOjosAzulesDefinitivo sacrificio2, DragonBlancoDeOjosAzules sacrificio3) {
         this.verificarInvocacion();
         monstruo.requiereSacrificios(sacrificio1,sacrificio2,sacrificio3);
 
